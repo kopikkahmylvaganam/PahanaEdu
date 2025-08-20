@@ -28,7 +28,7 @@ public class LoginServlet extends HttpServlet {
         if (loginDao.validateAdmin(loginBean)) {
             HttpSession session = request.getSession();
             session.setAttribute("role", "admin");
-            session.setAttribute("username", userName);
+            session.setAttribute("username", userName); // keep as "username"
             response.sendRedirect("adminDashboard.jsp");
             return;
         }
@@ -37,7 +37,7 @@ public class LoginServlet extends HttpServlet {
         if (loginDao.validateCustomer(loginBean)) {
             HttpSession session = request.getSession();
             session.setAttribute("role", "customer");
-            session.setAttribute("username", userName);
+            session.setAttribute("username", userName); // keep as "username"
             response.sendRedirect("customerDashboard.jsp");
         } else {
             request.setAttribute("errorMessage", "Invalid Username or Password!");
