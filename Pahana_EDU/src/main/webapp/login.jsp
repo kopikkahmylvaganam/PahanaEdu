@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Login</title>
-<link rel="stylesheet" href="css/home.css"> <!-- Link to your CSS file -->
+<link rel="stylesheet" href="css/style.css"> <!-- Link to your CSS file -->
 </head>
 <body>
     <section>

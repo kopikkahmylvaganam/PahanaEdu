@@ -19,6 +19,12 @@ public class CustomerEditServlet extends HttpServlet {
 
         CustomerDao dao = new CustomerDao();
         CustomerBean c = dao.getCustomerById(id, "customer".equals(role));
+
+        if (c == null) {
+            resp.sendRedirect("customerList?error=notfound");
+            return;
+        }
+
         req.setAttribute("customer", c);
 
         if ("admin".equals(role)) {
@@ -28,12 +34,13 @@ public class CustomerEditServlet extends HttpServlet {
         }
     }
 
+
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         int id = Integer.parseInt(req.getParameter("accountNumber"));
-        String userName = req.getParameter("userName");
+        String userName = req.getParameter("username");
         String address = req.getParameter("address");
-        String phone = req.getParameter("telephone");
+        String phone = req.getParameter("telephonenumber");
         String password = req.getParameter("password"); // may be null
 
         String role = (String) req.getSession().getAttribute("role");

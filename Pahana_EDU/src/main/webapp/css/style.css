@@ -1,0 +1,823 @@
+@charset "UTF-8";
+
+
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Ubuntu:wght@300;400;500&display=swap');
+
+  *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+  }
+  html{
+      scroll-behavior: smooth;
+      scroll-behavior: 5rem;
+  }
+  body{
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #222;
+  }
+  /* /* .navbar{
+      font-family: 'Ubuntu',sans-serif;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 1rem 4rem;
+      background-color: #222;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+  .navbar-toggler {
+    display: none;
+  }
+
+/* @media (min-width: 576px)
+.navbar-collapse { 
+    display: flex !important;
+    flex-basis: auto;
+  }
+
+  .navbar .logo a{
+      color: #fff;
+      font-size: 2.5rem;
+      font-weight: 500;
+  }
+  .navbar-brand span{
+      color: #f8b500;
+  }
+  .navbar .menu{
+      list-style: none;
+      display: flex;
+  }
+  .navbar .menu li{
+      margin: 0 1rem;
+  }
+  .navbar .menu li a{
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 500;
+      transition: all 0.3s ease-in-out;
+  }
+  .navbar .navbar-nav .nav-link:hover{
+      color:#f8b500 ;
+  }
+  .menu-toggle {
+      display: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+
+  }
+ */ 
+  /* Custom CSS for the responsive navbar */
+  .navbar {
+    font-family: 'Ubuntu',sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding:1rem ;
+    background-color: #222;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-brand h2{
+    
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 500;
+    text-size-adjust: 150%;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5); 
+}
+
+.navbar-brand h2 span{
+    color: #f8b500;
+    margin-right:4rem;
+    margin-left: 0%;
+    font-size: 2rem;
+    
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-nav .nav-item {
+    margin-right: 1rem;
+    list-style: none;
+    display: flex;
+    padding-left: 2rem;
+    /* margin-right: 0; */
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+      font-size: 1.2rem;
+      font-weight: 400;
+      transition: all 0.3s ease-in-out;
+       margin-right: 0.2rem;
+      /* margin-left: auto; */
+      
+}
+
+ .navbar-nav {
+    margin-left: auto;  /* This will push the nav items to the right */
+} 
+
+.navbar-nav .nav-link:hover{
+    color:#f8b500 ;
+} 
+
+
+.navbar-toggler {
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: #adb5bd;
+    border:1px solid #f8b500;
+    transition:15s ease-in-out; 
+}
+
+.menu-toggle {
+    display: none;
+}
+ 
+@media screen and (max-width: 576px) {
+    .navbar-nav .nav-item {
+        margin-right: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .navbar-collapse {
+        display: none;
+        /* color:#fff; */
+    }
+
+    .navbar-collapse.show {
+        display: block;
+        color:#fff;
+    }
+
+    
+}
+
+/* home css */
+.home{
+     background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("newbackground.jpg"); 
+    /* background-image: url(newbackground.jpg); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* #image{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+} */
+.home-content{
+    text-align: center;
+    color: #fff;
+    margin-top: 1rem;
+}
+.home-content h2{
+    font-size: 3rem;
+    margin-bottom: 2rem;
+   
+
+}
+.home-content p{
+  font-size: 1.5rem;
+  font-family: 'Ubuntu',sans-serif;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  
+}
+.btn{
+  display: inline-block;
+  background-color: #f8b500;
+  color: #fff;
+  padding: 0.5rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 25px ;
+  border: 2px solid #f8b500;
+  transition: all 0.3s ease-in-out;
+}
+.btn:hover{
+  background-color: transparent;
+  color: #f8b500;
+}
+
+.btn {
+    width: 100%;
+    margin-top: 0.5rem;
+    }
+.form-control {
+    padding: 6px 10px; /* Adjust padding as needed */
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    font-size: 14px; /* Adjust font size as needed */
+    transition: border-color 0.3s ease;
+    }
+      
+.form-control:focus {
+    outline: none;
+    border-color:#f8b500; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(46, 48, 49, 0.5); /* Add a subtle box shadow on focus */
+    }
+      
+/* service */
+
+.service{
+    padding: 2rem 2rem;
+}
+.service h2 {
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+.service p {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #222;
+}
+.service-items {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.fa-credit-card,
+.fa-shield,
+.fa-clock {
+    font-size: 3rem;
+    color: #f8b500;
+    margin-bottom: 1rem;
+
+
+}
+.service-item {
+    flex: 1 0 calc(33.33% - 20px);
+    margin-bottom: 2rem;
+    background-color: #fff;
+    page-break-after: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+.service-item:hover {
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    transform: translateY(-10px);
+}
+@media screen and (max-width: 768px) {
+    .service-items {
+        display: block; /* Change to block to take full width */
+    }
+
+    .service-item {
+        flex: 1 0 100%; /* Each offer takes full width on smaller screens */
+        margin-bottom: 20px; /* Add some space between offers */
+    }
+}
+
+
+/* facilities */
+
+.facilities{
+    padding: 2rem 2rem;
+}
+.facilities h2 {
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+.facilities p {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.facility-items {
+    display: flex;
+    /* flex-direction: unset; */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.facility-item {
+    flex: 1 0 calc(25% - 20px);
+    margin-bottom: 2rem;
+    /* height: 400px; */
+     /* Set a fixed height */
+    /* overflow: hidden; */
+    background-color: #fff;
+    page-break-after: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+.facility-item p{
+    color: #222;
+}
+.facility-item:hover {
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    transform: translateY(-10px);
+}
+.facility-item img {
+    /* Set the maximum width and add some margin */
+    max-width: 75%; /* Adjust the maximum width as needed */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /* image-orientation: flip; */
+     /* Adjust the margin-top to create space between the image and text */
+    /* You can add more styles as needed, such as border-radius, box-shadow, etc. */
+}
+@media screen and (max-width: 768px) {
+    .facility-items {
+        display: block; /* Change to block to take full width */
+    }
+
+    .facility-item {
+        flex: 1 0 100%; /* Each offer takes full width on smaller screens */
+        margin-bottom: 20px; /* Add some space between offers */
+    }
+}
+
+
+
+
+/* footer */
+
+.footer-container{
+    background-color: #2d2d2d;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+.footer-column{
+    flex-basis: calc(33.33% - 1rem);
+    margin-bottom: 2rem;
+    padding: 2rem;
+}
+.logo-text span{
+    color: #f8b500;
+
+}
+.social-icons {
+    display: flex;
+    list-style: none;
+}
+.social-icons li{
+    margin: 1rem 1rem 0 0;
+}
+.social-icons a{
+    color: #f7f7f7;
+    font-size: 1.5rem;
+    transition: all 0.3s ease-in-out;
+}
+.social-icons a:hover {
+    color: #f8b500;
+}
+.footer-column h3 {
+    margin-bottom: 1rem;
+}
+.footer-column ul {
+    list-style: none;
+
+}
+.footer-column ul li {
+    display: block;
+    padding: 6px;
+    margin: 4px;
+}
+.footer-column ul li a{
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+
+}
+.footer-column ul li a:hover{
+    color: #f8b500;
+
+}
+.footer-bottom {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+
+
+/* about */
+
+.about {
+    padding: 2rem 2rem;
+    display: flex;
+    justify-content: center; /* Optional: adjust alignment as needed */
+    background-color: #e9d3c0;
+}
+
+.flex-row1 {
+    padding: 2rem 2rem; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Optional: set a maximum width for the content */
+    margin: 0 auto; /* Optional: center content on the page */
+    /* background-color: #e9d3c0; */
+}
+
+.img-container {
+    flex: 1;
+    margin-right: 20px; /* Optional: adjust spacing between elements */
+}
+
+.img-gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-uss {
+    flex: 1;
+    max-width: 600px; /* Optional: set a maximum width for the content */
+}
+
+.about-uss h4 {
+    margin-bottom: 10px; /* Add spacing between heading and paragraph */
+    font-size: 1.5rem; /* Adjust the font size of the heading */
+    /* Add any other styles as needed for the heading */
+}
+
+.about-uss p {
+    font-size: 1rem;
+    color: #222; /* Adjust the font size of the paragraph */
+    /* Add any other styles as needed for the paragraph */
+}
+
+
+/* Media query for responsiveness (adjust as needed) */
+@media screen and (max-width: 768px) {
+    .flex-row1 {
+        flex-direction: column; /* Stack elements on small screens */
+    }
+    .img-container,
+    .about-uss {
+        margin-right: 0; /* Reset margin for stacking */
+    }
+}
+
+/* login */
+
+.login {
+    padding: 4rem 2rem;
+     height:auto;
+    
+    justify-content: center; /* Optional: adjust alignment as needed */
+    background-color: #e9d3c0;
+}
+
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+   
+}
+
+
+.login-container {
+    max-width: 500px; 
+    
+    margin: 0 auto;
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.login-container p {
+    margin-top: 20px;
+    size: 18px; 
+}
+
+
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="tel"],
+input[type="password"],
+input[type="email"] {
+    width: calc(100% - 12px);
+    padding: 6px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 18px;
+
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 8px 12px;
+    border: none;
+    background-color: #222;
+    color: #fff;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+input[type="submit"]:hover {
+    color: #f8b500;
+    transform: translateY(-5px);
+    text-transform: uppercase;
+}
+
+.login-container a {
+    text-decoration: none;
+    color: blue;
+    size: 20px;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+    color:rgb(103, 23, 179);
+    text-transform: uppercase;
+}
+@media screen and (max-width: 768px) {
+    .login {
+        width: 80%;
+        max-width: 400px;
+    }
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 480px) {
+    .login {
+        width: 90%;
+    }
+}
+
+/* contact us */
+
+/* Common styles for flex container and columns */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.left-side,
+.right-side {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Styles for left side (image and description) */
+.left-side {
+    flex: 1; /* Occupy the available space */
+}
+
+.left-side img {
+    max-width: 100%;
+    height: 80%;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Styles for right side (feedback form) */
+.right-side {
+    flex: 1 0 calc(50% - 40px); /* Take up half width, considering padding */
+    max-width: calc(50% - 40px);
+}
+
+.feedback-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for form elements */
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Styles for the special submit button */
+#feedbackForm .special-submit {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color:#2d2d2d;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#feedbackForm .special-submit:hover {
+    
+    color: #f8b500;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .left-side,
+    .right-side {
+        flex: 1 0 100%; /* Each takes full width on smaller screens */
+        max-width: 100%;
+    }
+}
+
+/* promotions */
+/* ... (Previous CSS styles) ... */
+
+/* Separate section for promotions/offers */
+.promotion-section {
+    background: #f5f5f5;
+    padding: 20px 0;
+}
+
+.promotion-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.offers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Add spacing between offers */
+}
+
+.offer {
+    flex: 1 0 calc(33.33% - 20px); /* Three offers in a row, considering gap */
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.offer img {
+    max-width: 100%; /* Ensure the image fits within the container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Make the image a block element for better alignment */
+    margin-bottom: 10px; /* Add spacing between image and content */
+}
+.order-button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.order-button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .offers {
+        display: block; /* Change to block to take full width */
+    }
+
+    .offer {
+        flex: 1 0 100%; /* Each offer takes full width on smaller screens */
+        margin-bottom: 20px; /* Add some space between offers */
+    }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #222;
+    color: #fff;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    font-weight: 500;
+}
+
+tbody tr:hover {
+    background-color: #f8f8f8;
+}
+
+a {
+    color: #f8b500;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #d49400;
+}
+
+/* Button Links */
+.actions a {
+    margin: 0 5px;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.actions a:first-child {
+    background-color: #007bff;
+    color: white;
+}
+
+.actions a:last-child {
+    background-color: #dc3545;
+    color: white;
+}
+
+.actions a:hover {
+    opacity: 0.8;
+}
+
+/* Add Driver Link */
+.add-driver {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #f8b500;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.add-driver:hover {
+    background-color: #d49400;
+}
+
+

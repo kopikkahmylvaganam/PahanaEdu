@@ -11,15 +11,15 @@ public class CustomerDao {
     public List<CustomerBean> getAllCustomers() {
         List<CustomerBean> list = new ArrayList<>();
         try (Connection con = DBConnection.getInstance().getConnection()) {
-            String sql = "SELECT account_number, user_name, address, telephone_number FROM customer";
+            String sql = "SELECT 'account_number', 'username', 'address', 'telephonenumber' FROM customer";
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 CustomerBean c = new CustomerBean();
                 c.setAccountNumber(rs.getInt("account_number"));
-                c.setUserName(rs.getString("user_name"));
+                c.setUserName(rs.getString("username"));
                 c.setAddress(rs.getString("address"));
-                c.setTelephoneNumber(rs.getString("telephone_number"));
+                c.setTelephoneNumber(rs.getString("telephonenumber"));
                 list.add(c);
             }
         } catch (Exception e) {
@@ -34,16 +34,16 @@ public class CustomerDao {
         try (Connection con = DBConnection.getInstance().getConnection()) {
             String sql = includePassword
                 ? "SELECT * FROM customer WHERE account_number=?"
-                : "SELECT account_number, user_name, address, telephone_number FROM customer WHERE account_number=?";
+                : "SELECT 'account_number', 'username', 'address', 'telephonenumber' FROM customer WHERE account_number=?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 c = new CustomerBean();
                 c.setAccountNumber(rs.getInt("account_number"));
-                c.setUserName(rs.getString("user_name"));
+                c.setUserName(rs.getString("username"));
                 c.setAddress(rs.getString("address"));
-                c.setTelephoneNumber(rs.getString("telephone_number"));
+                c.setTelephoneNumber(rs.getString("telephonenumber"));
                 if (includePassword) {
                     c.setPassword(rs.getString("password"));
                 }
@@ -58,16 +58,16 @@ public class CustomerDao {
     public CustomerBean getCustomerByUserName(String userName) {
         CustomerBean c = null;
         try (Connection con = DBConnection.getInstance().getConnection()) {
-            String sql = "SELECT * FROM customer WHERE user_name=?";
+            String sql = "SELECT 'account_number', 'username', 'address', 'telephonenumber', 'password' FROM customer WHERE username=?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, userName);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 c = new CustomerBean();
                 c.setAccountNumber(rs.getInt("account_number"));
-                c.setUserName(rs.getString("user_name"));
+                c.setUserName(rs.getString("username"));
                 c.setAddress(rs.getString("address"));
-                c.setTelephoneNumber(rs.getString("telephone_number"));
+                c.setTelephoneNumber(rs.getString("telephonenumber"));
                 c.setPassword(rs.getString("password"));
             }
         } catch (Exception e) {
@@ -76,15 +76,16 @@ public class CustomerDao {
         return c;
     }
 
+
     // Update customer
     public boolean updateCustomer(CustomerBean c, boolean includePassword) {
         boolean status = false;
         try (Connection con = DBConnection.getInstance().getConnection()) {
             String sql;
             if (includePassword) {
-                sql = "UPDATE customer SET user_name=?, address=?, telephone_number=?, password=? WHERE account_number=?";
+                sql = "UPDATE customer SET username=?, address=?, telephonenumber=?, password=? WHERE account_number=?";
             } else {
-                sql = "UPDATE customer SET user_name=?, address=?, telephone_number=? WHERE account_number=?";
+                sql = "UPDATE customer SET username=?, address=?, telephonenumber=? WHERE account_number=?";
             }
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, c.getUserName());

@@ -15,45 +15,51 @@ public class SignupServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String userName = request.getParameter("username");
+        String username = request.getParameter("username");
         String address = request.getParameter("address");
-        String telephone = request.getParameter("telephone");
+        String telephonenumber = request.getParameter("telephonenumber");
         String password = request.getParameter("password");
 
         // ---------- Backend Validation ----------
-        if (userName == null || userName.trim().length() < 3) {
+        if (username == null || username.trim().length() < 3) {
             request.setAttribute("errorMessage", "Username must be at least 3 characters.");
             request.getRequestDispatcher("Signup.jsp").forward(request, response);
             return;
         }
 
-        if (telephone == null || !telephone.matches("\\d{10}")) {
+        if (telephonenumber == null || !telephonenumber.matches("\\d{10}")) {
             request.setAttribute("errorMessage", "Invalid phone number. Must be exactly 10 digits.");
             request.getRequestDispatcher("Signup.jsp").forward(request, response);
             return;
         }
 
         if (password == null || password.length() < 4) {
-            request.setAttribute("errorMessage", "Password must be at least 6 characters.");
+            request.setAttribute("errorMessage", "Password must be at least 4 characters.");
+            request.getRequestDispatcher("Signup.jsp").forward(request, response);
+            return;
+        }
+
+        if (username.length() > 45 || address.length() > 100 || telephonenumber.length() > 10 || password.length() > 50) {
+            request.setAttribute("errorMessage", "Input exceeds allowed length for one or more fields.");
             request.getRequestDispatcher("Signup.jsp").forward(request, response);
             return;
         }
         // ---------------------------------------
 
         SignupBean customer = new SignupBean();
-        customer.setUserName(userName);
+        customer.setUserName(username);
         customer.setAddress(address);
-        customer.setTelephoneNumber(telephone);
+        customer.setTelephoneNumber(telephonenumber);
         customer.setPassword(password);
 
         SignupDao dao = new SignupDao();
         boolean status = dao.registerCustomer(customer);
 
         if (status) {
-            request.setAttribute("message", "Signup successful! Please login.");
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+            request.setAttribute("message", "Signup successful! You will be redirected to login.");
+            request.getRequestDispatcher("Signup.jsp").forward(request, response);
         } else {
-            request.setAttribute("errorMessage", "Signup failed. Try again!");
+            request.setAttribute("errorMessage", "Signup failed. Username may already exist. Please try a different username.");
             request.getRequestDispatcher("Signup.jsp").forward(request, response);
         }
     }

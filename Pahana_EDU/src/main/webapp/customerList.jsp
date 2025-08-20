@@ -11,7 +11,7 @@
 </tr>
 <%
     List<CustomerBean> list = (List<CustomerBean>) request.getAttribute("customer");
-    if (list != null) {
+    if (list != null && !list.isEmpty()) {
         for (CustomerBean c : list) {
 %>
 <tr>
@@ -26,8 +26,11 @@
     </td>
 </tr>
 <%      }
-    }
-%>
+    } else { %>
+<tr>
+    <td colspan="5" style="text-align:center; color:red;">No customers found.</td>
+</tr>
+<% } %>
 </table>
 </body>
 </html>

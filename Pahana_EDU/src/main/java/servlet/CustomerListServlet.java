@@ -24,7 +24,7 @@ public class CustomerListServlet extends HttpServlet {
 
         CustomerDao dao = new CustomerDao();
         List<CustomerBean> list = dao.getAllCustomers();
-        req.setAttribute("customers", list);
+        req.setAttribute("customer", list);
         req.getRequestDispatcher("customerList.jsp").forward(req, resp);
     }
 }

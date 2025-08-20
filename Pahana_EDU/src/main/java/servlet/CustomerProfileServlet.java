@@ -21,7 +21,7 @@ public class CustomerProfileServlet extends HttpServlet {
             return;
         }
 
-        String userName = (String) session.getAttribute("username"); // ✅ FIXED
+        String userName = (String) session.getAttribute("username");
         CustomerDao dao = new CustomerDao();
         CustomerBean customer = dao.getCustomerByUserName(userName);
 
@@ -30,12 +30,7 @@ public class CustomerProfileServlet extends HttpServlet {
             RequestDispatcher rd = req.getRequestDispatcher("customerProfile.jsp");
             rd.forward(req, resp);
         } else {
-            resp.getWriter().println("Customer details not found!");
+            resp.sendRedirect("customerDashboard.jsp?error=notfound");
         }
-    }
-
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
-        doGet(req, resp);
     }
 }
