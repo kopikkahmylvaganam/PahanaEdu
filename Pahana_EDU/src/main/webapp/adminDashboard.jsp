@@ -29,21 +29,21 @@
                 <ul class="navbar-nav">
                     
                     
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="#about">Books</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="">Manage customers</a>
-                    </li>
-                    <li class="nav-item">
+                    </li> -->
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="menu.php">Cars</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="customerList.jsp">Customers</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="#contact">Feedbacks</a>
-                    </li>
+                    </li> -->
                     
                     <li class="nav-item">
                         <a class="nav-link" href="Logout">
@@ -84,7 +84,23 @@
     </div>
 </div>
     <!-- home section finish here -->
+ <div class="about" id="about">
+        <div class="flex-row1">
+            <h2>Admin Dashboard</h2>
+         <ul>
+             <li><a href="itemList">📚 Manage Books</a></li>
+             <li><a href="customerList">👥 View Customers</a></li>
+             <li><a href="orderList">📦 View All Orders</a></li>
+             <li><a href="logout.jsp">🚪 Logout</a></li>
+             
+             
+        </ul>
 
+          
+            
+        </div>
+    </div>
+    
    
 
 

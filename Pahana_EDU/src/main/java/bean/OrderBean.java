@@ -1,10 +1,12 @@
 package bean;
 
 import java.util.List;
+import java.time.LocalDateTime;
 
 public class OrderBean {
     private int orderId;
-    private int accountNumber;  // ✅ matches customer.account_number
+    private int accountNumber;
+    private LocalDateTime orderDate;
     private double totalAmount;
     private List<OrderItemBean> items;
 
@@ -13,6 +15,9 @@ public class OrderBean {
 
     public int getAccountNumber() { return accountNumber; }
     public void setAccountNumber(int accountNumber) { this.accountNumber = accountNumber; }
+
+    public LocalDateTime getOrderDate() { return orderDate; }
+    public void setOrderDate(LocalDateTime orderDate) { this.orderDate = orderDate; }
 
     public double getTotalAmount() { return totalAmount; }
     public void setTotalAmount(double totalAmount) { this.totalAmount = totalAmount; }

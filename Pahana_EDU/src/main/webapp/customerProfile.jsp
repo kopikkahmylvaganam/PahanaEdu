@@ -2,7 +2,7 @@
 <%@ page import="bean.CustomerBean" %>
 
 <%
-    CustomerBean c = (CustomerBean) request.getAttribute("customer");
+    CustomerBean c = (CustomerBean) session.getAttribute("customer");
 %>
 
 <html>
@@ -10,33 +10,37 @@
     <title>My Profile</title>
 </head>
 <body>
-
     <h1>My Profile</h1>
+
+    <% if (request.getAttribute("errorMessage") != null) { %>
+      <p style="color:red;"><%= request.getAttribute("errorMessage") %></p>
+    <% } %>
+    <% if (request.getAttribute("successMessage") != null) { %>
+      <p style="color:green;"><%= request.getAttribute("successMessage") %></p>
+    <% } %>
 
     <% if (c == null) { %>
         <p style="color:red;">Customer details not found. Please login again.</p>
     <% } else { %>
         <form action="editCustomer" method="post">
-            <!-- Account number shown but not editable -->
-            Account Number: 
+            Account Number:
             <input type="text" value="<%=c.getAccountNumber()%>" readonly><br>
             <input type="hidden" name="accountNumber" value="<%=c.getAccountNumber()%>">
 
-            Username: 
-            <input type="text" name="username" value="<%=c.getUserName()%>"><br>
+            Username:
+            <input type="text" name="userName" value="<%=c.getUserName()%>" required><br>
 
-            Address: 
-            <input type="text" name="address" value="<%=c.getAddress()%>"><br>
+            Address:
+            <input type="text" name="address" value="<%=c.getAddress()%>" required><br>
 
-            Phone: 
-            <input type="text" name="telephone" value="<%=c.getTelephoneNumber()%>"><br>
+            Phone:
+            <input type="text" name="telephone" value="<%=c.getTelephoneNumber()%>" required><br>
 
-            Password: 
-            <input type="password" name="password" value="<%=c.getPassword()%>"><br>
+            Password:
+            <input type="password" name="password" value="<%=c.getPassword()%>" required><br>
 
             <input type="submit" value="Update">
         </form>
     <% } %>
-
 </body>
 </html>

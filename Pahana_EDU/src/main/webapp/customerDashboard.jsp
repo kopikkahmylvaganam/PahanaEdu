@@ -29,7 +29,7 @@
     <!-- navbarb section start here -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index2.php"><h2>PATHANA EDU <span>BOOKSHOP</span></h2></a>
+            <a class="navbar-brand" href="customerDahboard.jsp"><h2>PATHANA EDU <span>BOOKSHOP</span></h2></a>
     
             <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -44,7 +44,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="customerProfile.jsp">My Profile</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="#service">Books</a>
                     </li>
                     <li class="nav-item">
@@ -52,7 +52,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="reservation.php">hidden gems</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Help</a>
                     </li>
@@ -93,50 +93,32 @@
     <!-- home section finish here -->
 
     <!-- promotions -->
-    <!-- <section id="promotions">
+    <%-- <section id="promotions">
         <div class="promotion-section">
             <div class="promotion-container">
-                <h2>Special Offers</h2>
-                <div class="offers">
-                    <div class="offer">
-                        <img src="img/biriyani.jpg" alt="Food Offer 1">
-                        <h3>Biriyani</h3>
-                        <h4>only Rs1000</h4>
-                        <p>Get 25% off on your favorite dish!</p>
-                        
-                    </div>
-                    <div class="offer">
-                        <img src="img/pasta.jpg" alt="Food Offer 2">
-                        <h3>Pasta</h3>
-                        <h4>only Rs1000</h4>
-                        <p>Enjoy a 25% discount on selected menu items!</p>
-                        
-                    </div>
-                    <div class="offer">
-                        <img src="img/burger.jpeg" alt="Food Offer 3">
-                        <h3>Burger combo</h3>
-                        <h4>only Rs1200</h4>
-                        <p>Save 25% on our special combos!</p>
-                        
-                    </div>
-                </div>
+                
+                <h2>Welcome, <%=session.getAttribute("user_name")%>!</h2>
+                 
+          
             </div>
         </div>
         
-    </section>
-    promotions end -->
+    </section> --%>
+    
      <!-- about -->
      <div class="about" id="about">
         <div class="flex-row1">
-            <div class="img-container">
-                <figure class="img-gallery">
-                    <img src="img/women.jpg" alt="Description">
-                </figure>
-            </div>
-            <div class="about-uss">
-                <h4>About Us</h4>
-                <p> this is a Tourism webportal where the tourist can not only get about the information which needed during their beautiful travel but also an forum </p>
-            </div>
+            <ul>
+            
+            <li><a href="cart">🛒 View Cart</a></li>
+             <li><a href="myOrders">📦 My Orders</a></li>
+             <li><a href="customerProfile.jsp">👤 My Profile</a></li>
+             
+             <li><a href="books">📚 View Books & Order</a></li>
+             
+          </ul>
+          
+            
         </div>
     </div>
     
@@ -147,7 +129,7 @@
 
     
 
-    <section id="contact">
+   <!--  <section id="contact">
         <h2>Contact Us</h2>
         <div class="container" >
             
@@ -158,7 +140,7 @@
             </div>
             <div class="right-side">
                 <div class="feedback-container">
-                    <!-- <h2>Feedback / Enquiry Form</h2> -->
+                    <h2>Feedback / Enquiry Form</h2>
                     <form id="feedbackForm" action="index2.php" method="POST">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required><br>
@@ -174,7 +156,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
    
 
    

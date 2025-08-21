@@ -3,23 +3,30 @@
 <html>
 <head><title>Place Order</title></head>
 <body>
-<h2>Select Book to Order</h2>
+<h2>Select Book</h2>
 
-<form action="PlaceOrder" method="post">
-    <label for="book">Choose Book:</label>
-    <select name="bookName">
+<% if (request.getAttribute("errorMessage") != null) { %>
+  <p style="color:red;"><%=request.getAttribute("errorMessage")%></p>
+<% } %>
+
+<form action="cart/add" method="post">
+    <label>Book:</label>
+    <select name="bookName" required>
         <%
             List<ItemBean> items = (List<ItemBean>) request.getAttribute("items");
             for (ItemBean i : items) {
         %>
-        <option value="<%=i.getName()%>"><%=i.getName()%> (Stock: <%=i.getStock()%>)</option>
+        <option value="<%=i.getName()%>">
+            <%=i.getName()%> - Rs.<%=i.getPrice()%> (Stock: <%=i.getStock()%>)
+        </option>
         <% } %>
-    </select><br><br>
-
-    <label>Quantity:</label>
-    <input type="number" name="qty" min="1" required><br><br>
-
-    <input type="submit" value="Order">
+    </select>
+    &nbsp;&nbsp;
+    <label>Qty:</label>
+    <input type="number" name="qty" min="1" value="1" required>
+    <input type="submit" value="Add to Cart">
 </form>
+
+<p><a href="cart">View Cart</a> | <a href="itemList">Back to Books</a></p>
 </body>
 </html>

@@ -3,9 +3,9 @@ package bean;
 public class OrderItemBean {
     private int orderItemId;
     private int itemId;
-    private String itemName;  // ✅ display purpose
+    private String itemName;
     private int quantity;
-    private double price;
+    private double price; // unit price at order time
 
     public int getOrderItemId() { return orderItemId; }
     public void setOrderItemId(int orderItemId) { this.orderItemId = orderItemId; }
@@ -21,4 +21,6 @@ public class OrderItemBean {
 
     public double getPrice() { return price; }
     public void setPrice(double price) { this.price = price; }
+
+    public double getLineTotal() { return price * quantity; }
 }
