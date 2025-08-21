@@ -19,31 +19,33 @@ public class CustomerEditServlet extends HttpServlet {
 
         CustomerDao dao = new CustomerDao();
         CustomerBean c = dao.getCustomerById(id, "customer".equals(role));
-
-        if (c == null) {
-            resp.sendRedirect("customerList?error=notfound");
-            return;
-        }
-
         req.setAttribute("customer", c);
 
         if ("admin".equals(role)) {
             req.getRequestDispatcher("editCustomer.jsp").forward(req, resp);
         } else {
+            // customer profile page
+            req.getSession().setAttribute("customer", c);
             req.getRequestDispatcher("customerProfile.jsp").forward(req, resp);
         }
     }
 
-
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        int id = Integer.parseInt(req.getParameter("accountNumber"));
-        String userName = req.getParameter("username");
-        String address = req.getParameter("address");
-        String phone = req.getParameter("telephonenumber");
-        String password = req.getParameter("password"); // may be null
-
         String role = (String) req.getSession().getAttribute("role");
+
+        int id = Integer.parseInt(req.getParameter("accountNumber"));
+
+        // read both keys safely
+        String userName = req.getParameter("userName");
+        if (userName == null || userName.isBlank()) {
+            userName = req.getParameter("username");
+        }
+
+        String address = req.getParameter("address");
+        String phone = req.getParameter("telephone");
+        String password = req.getParameter("password"); // customer updates this
+
         boolean includePassword = "customer".equals(role);
 
         CustomerBean c = new CustomerBean();
@@ -59,16 +61,28 @@ public class CustomerEditServlet extends HttpServlet {
         boolean updated = dao.updateCustomer(c, includePassword);
 
         if (updated) {
+            // refresh current bean from DB using account number (robust even if username changed)
+            CustomerBean fresh = dao.getCustomerById(id, true);
+
             if ("admin".equals(role)) {
                 resp.sendRedirect("customerList");
             } else {
-                resp.sendRedirect("customerDashboard.jsp");
+                // keep session in sync
+                HttpSession session = req.getSession();
+                session.setAttribute("customer", fresh);
+                session.setAttribute("username", fresh.getUserName());
+                session.setAttribute("user_name", fresh.getUserName());
+
+                req.setAttribute("successMessage", "Profile updated successfully!");
+                req.getRequestDispatcher("customerProfile.jsp").forward(req, resp);
             }
         } else {
-            req.setAttribute("errorMessage", "Update failed!");
+            req.setAttribute("errorMessage", "Update failed! Please check your inputs.");
             if ("admin".equals(role)) {
                 req.getRequestDispatcher("editCustomer.jsp").forward(req, resp);
             } else {
+                // re-bind what user typed so fields don't go blank
+                req.setAttribute("customer", c);
                 req.getRequestDispatcher("customerProfile.jsp").forward(req, resp);
             }
         }
