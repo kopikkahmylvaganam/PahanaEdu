@@ -12,11 +12,12 @@ import dao.CustomerDao;
 public class CustomerProfileServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
+    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        
+
         HttpSession session = req.getSession(false);
-        if (session == null || session.getAttribute("username") == null) { 
+        if (session == null || session.getAttribute("username") == null) {
             resp.sendRedirect("login.jsp");
             return;
         }
@@ -26,9 +27,9 @@ public class CustomerProfileServlet extends HttpServlet {
         CustomerBean customer = dao.getCustomerByUserName(userName);
 
         if (customer != null) {
-            req.setAttribute("customer", customer);
-            RequestDispatcher rd = req.getRequestDispatcher("customerProfile.jsp");
-            rd.forward(req, resp);
+            session.setAttribute("customer", customer); // keep session in sync
+            req.setAttribute("customer", customer);     // also set for JSP if needed
+            req.getRequestDispatcher("customerProfile.jsp").forward(req, resp);
         } else {
             resp.sendRedirect("customerDashboard.jsp?error=notfound");
         }

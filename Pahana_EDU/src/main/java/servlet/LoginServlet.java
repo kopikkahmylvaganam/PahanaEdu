@@ -26,7 +26,7 @@ public class LoginServlet extends HttpServlet {
         LoginDao loginDao = new LoginDao();
 
         try {
-            // ✅ Admin Login
+            // Admin login
             if (loginDao.validateAdmin(loginBean)) {
                 HttpSession session = request.getSession();
                 session.setAttribute("role", "admin");
@@ -35,20 +35,17 @@ public class LoginServlet extends HttpServlet {
                 return;
             }
 
-            // ✅ Customer Login
+            // Customer login
             if (loginDao.validateCustomer(loginBean)) {
                 HttpSession session = request.getSession();
                 session.setAttribute("role", "customer");
                 session.setAttribute("username", userName);
 
-                // Fetch full customer details
                 CustomerBean customer = loginDao.getCustomerDetails(userName);
-
                 if (customer != null) {
                     session.setAttribute("customer", customer);
                     response.sendRedirect("customerDashboard.jsp");
                 } else {
-                    // Customer not found in DB
                     session.invalidate();
                     response.sendRedirect("login.jsp?error=customerNotFound");
                 }

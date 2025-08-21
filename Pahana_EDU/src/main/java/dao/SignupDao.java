@@ -16,14 +16,12 @@ public class SignupDao {
             ps.setString(2, customer.getAddress());
             ps.setString(3, customer.getTelephoneNumber());
             ps.setString(4, customer.getPassword());
-
             int rows = ps.executeUpdate();
-            if (rows > 0) {
-                result = true;
-            }
+            result = rows > 0;
         } catch (SQLException e) {
-            if (e.getSQLState().equals("23000")) { // Duplicate entry error
-                return false; // Indicate duplicate username
+            // Duplicate username etc.
+            if ("23000".equals(e.getSQLState())) {
+                return false;
             }
             e.printStackTrace();
             return false;
