@@ -74,7 +74,7 @@
     <!-- navbar finish here -->
     <!-- Home section  start-->
     <div class="home" id="home" style="position: relative;">
-    <img src="img/2.jpg" alt="" style="width: 100%; height:100vh; object-fit: cover; position: relative;">
+    <img src="img/book.jpeg" alt="" style="width: 100%; height:100vh; object-fit: cover; position: relative;">
 <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));"></div>
 
 

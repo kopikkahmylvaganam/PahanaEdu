@@ -42,6 +42,7 @@
     <% } %>
     </tbody>
   </table>
+  <p> <a href="adminDashboard.jsp">Back to Dashboard</a></p>
 </div>
 </body>
 </html>
