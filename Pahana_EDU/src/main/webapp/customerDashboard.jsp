@@ -29,7 +29,7 @@
     <!-- navbarb section start here -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="customerDahboard.jsp"><h2>PATHANA EDU <span>BOOKSHOP</span></h2></a>
+            <a class="navbar-brand" href=""><h2>PATHANA EDU <span>BOOKSHOP</span></h2></a>
     
             <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -37,22 +37,20 @@
     
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
+                    
                     
                     <li class="nav-item">
                         <a class="nav-link" href="customerProfile.jsp">My Profile</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="#service">Books</a>
+                     <li class="nav-item">
+                        <a class="nav-link" href="books">Books</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="menu.php">cultural places</a>
+                        <a class="nav-link" href="orders">My Orders</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="reservation.php">hidden gems</a>
-                    </li> -->
+                        <a class="nav-link" href="cart">View cart</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Help</a>
                     </li>
@@ -77,7 +75,7 @@
     <!-- navbar finish here -->
     <!-- Home section  start-->
     <div class="home" id="home" style="position: relative;">
-    <img src="img/tourism.jpg" alt="" style="width: 100%; height:100vh; object-fit: cover; position: relative;">
+    <img src="img/book.jpeg" alt="" style="width: 100%; height:100vh; object-fit: cover; position: relative;">
 <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));"></div>
 
 
@@ -93,28 +91,18 @@
     <!-- home section finish here -->
 
     <!-- promotions -->
-    <%-- <section id="promotions">
-        <div class="promotion-section">
-            <div class="promotion-container">
-                
-                <h2>Welcome, <%=session.getAttribute("user_name")%>!</h2>
-                 
-          
-            </div>
-        </div>
-        
-    </section> --%>
+    
     
      <!-- about -->
      <div class="about" id="about">
         <div class="flex-row1">
             <ul>
             
-            <li><a href="cart">🛒 View Cart</a></li>
+           <!--  <li><a href="cart">🛒 View Cart</a></li>
              <li><a href="myOrders">📦 My Orders</a></li>
              <li><a href="customerProfile.jsp">👤 My Profile</a></li>
              
-             <li><a href="books">📚 View Books & Order</a></li>
+             <li><a href="customerBooks">📚 View Books & Order</a></li> -->
              
           </ul>
           
@@ -165,7 +153,7 @@
     <section>
         <div class="footer-container">
             <div class="footer-column">
-                <h3 class="logo-text">The tourist web portal <span> forum</span> </h3>
+                <h3 class="logo-text">Pahana edu <span> bookshop</span> </h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, minima.</p>
                 <ul class="social-icons">
                     <li><a href="#"><i class="fab fa-facebook"></i></a></li>
@@ -180,11 +168,11 @@
                 <h3>Quick links</h3>
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#">Promotions</a></li>
+                    <!-- <li><a href="#">Promotions</a></li> -->
                     <li><a href="#about">About</a></li>
-                    <li><a href="#service">Service</a></li>
+                    <!-- <li><a href="#service">Service</a></li>
                     <li><a href="#">Menu</a></li>
-                    <li><a href="#">Reservation</a></li>
+                    <li><a href="#">Reservation</a></li> -->
                     
                 </ul>
             </div>

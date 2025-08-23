@@ -1,8 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page import="java.util.*,bean.CartItemBean" %>
 <html>
-<head><title>My Cart</title></head>
+<head>
+<link rel="stylesheet" href="css/styless.css">
+
+<title>My Cart</title>
+</head>
 <body>
+<div class="container">
 <h2>My Cart</h2>
 
 <% if (request.getAttribute("errorMessage") != null) { %>
@@ -52,5 +57,7 @@
 <p><a href="orderForm">Add more books</a></p>
 
 <% } %>
+<p> <a href="customerDashboard.jsp">Back to Dashboard</a></p>
+</div>
 </body>
 </html>

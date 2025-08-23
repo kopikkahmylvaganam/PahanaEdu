@@ -4,8 +4,10 @@
     CustomerBean c = (CustomerBean) request.getAttribute("customer");
 %>
 <html>
+<link rel="stylesheet" href="css/styless.css">
 <head><title>Edit Customer</title></head>
 <body>
+<div class="container">
 <h1>Edit Customer (Admin)</h1>
 <% if (c == null) { %>
     <p style="color:red;">Customer not found!</p>
@@ -19,5 +21,6 @@
     <input type="submit" value="Update">
 </form>
 <% } %>
+</div>
 </body>
 </html>

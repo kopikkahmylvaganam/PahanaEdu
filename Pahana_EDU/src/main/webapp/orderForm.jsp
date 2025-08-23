@@ -1,8 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page import="java.util.*,bean.ItemBean" %>
 <html>
-<head><title>Place Order</title></head>
+<head><title>Place Order</title>
+<link rel="stylesheet" href="css/styless.css">
+</head>
 <body>
+<div class="container">
 <h2>Select Book</h2>
 
 <% if (request.getAttribute("errorMessage") != null) { %>
@@ -21,12 +24,15 @@
         </option>
         <% } %>
     </select>
-    &nbsp;&nbsp;
+    &nbsp;&nbsp;<br>
+    
     <label>Qty:</label>
     <input type="number" name="qty" min="1" value="1" required>
     <input type="submit" value="Add to Cart">
 </form>
 
-<p><a href="cart">View Cart</a> | <a href="itemList">Back to Books</a></p>
+<p><a href="cart">View Cart</a> | <a href="books">Back to Books</a></p>
+<p> <a href="customerDashboard.jsp">Back to Dashboard</a></p>
+</div>
 </body>
 </html>

@@ -29,17 +29,17 @@
                 <ul class="navbar-nav">
                     
                     
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="#about">Books</a>
+                     <li class="nav-item">
+                        <a class="nav-link" href="itemList">Books</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Manage customers</a>
-                    </li> -->
+                        <a class="nav-link" href="orderList">Orders</a>
+                    </li> 
                     <!-- <li class="nav-item">
                         <a class="nav-link" href="menu.php">Cars</a>
                     </li> -->
                     <li class="nav-item">
-                        <a class="nav-link" href="customerList.jsp">Customers</a>
+                        <a class="nav-link" href="customerList">Customers</a>
                     </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link" href="#contact">Feedbacks</a>
@@ -74,7 +74,7 @@
     <!-- navbar finish here -->
     <!-- Home section  start-->
     <div class="home" id="home" style="position: relative;">
-    <img src="img/top-view-food-banquet.jpg" alt="" style="width: 100%; height:100vh; object-fit: cover; position: relative;">
+    <img src="img/2.jpg" alt="" style="width: 100%; height:100vh; object-fit: cover; position: relative;">
 <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));"></div>
 
 
@@ -84,7 +84,7 @@
     </div>
 </div>
     <!-- home section finish here -->
- <div class="about" id="about">
+ <!-- <div class="about" id="about">
         <div class="flex-row1">
             <h2>Admin Dashboard</h2>
          <ul>
@@ -99,7 +99,7 @@
           
             
         </div>
-    </div>
+    </div> -->
     
    
 

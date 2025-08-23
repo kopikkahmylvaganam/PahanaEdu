@@ -1,6 +1,8 @@
 <%@ page import="java.util.*, bean.OrderBean" %>
 <html>
-<head><title>All Orders</title></head>
+<head><title>All Orders</title>
+<link rel="stylesheet" href="css/styless.css">
+</head>
 <body>
 <h2>All Orders</h2>
 

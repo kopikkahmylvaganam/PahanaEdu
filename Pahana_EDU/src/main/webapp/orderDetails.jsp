@@ -4,8 +4,12 @@
   OrderBean order = (OrderBean) request.getAttribute("order");
 %>
 <html>
-<head><title>Order Details</title></head>
+<head><title>Order Details</title>
+<link rel="stylesheet" href="css/styless.css">
+
+</head>
 <body>
+<div class="container">
 <h2>Invoice</h2>
 <% if (order == null) { %>
   <p>Order not found.</p>
@@ -13,7 +17,7 @@
   <p><b>Order ID:</b> <%=order.getOrderId()%></p>
   <p><b>Order Date:</b> <%=order.getOrderDate()%></p>
 
-  <table border="1" cellpadding="6">
+  <table  border="1" cellpadding="6">
     <tr><th>#</th><th>Book</th><th>Price</th><th>Qty</th><th>Line Total</th></tr>
     <%
       int idx = 1; 
@@ -36,6 +40,8 @@
     </tr>
   </table>
 <% } %>
-<p><a href="orders">Back to Orders</a></p>
+<p><a href="orderList">Back to Orders</a></p>
+<p> <a href="customerDashboard.jsp">Back to Dashboard</a></p>
+</div>
 </body>
 </html>

@@ -2,6 +2,7 @@
 <%@ page import="java.util.*,bean.ItemBean" %>
 <html>
 <head>
+<link rel="stylesheet" href="css/styless.css">
     <title>Books</title>
 </head>
 <body>

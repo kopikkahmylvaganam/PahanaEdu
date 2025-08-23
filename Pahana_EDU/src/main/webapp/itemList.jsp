@@ -96,6 +96,8 @@
             </div>
         </div>
         
+        <p> <a href="customerDashboard.jsp">Back to Dashboard</a></p>
+        
     </section> 
     
 <%-- <h2>Books (Item List)</h2>

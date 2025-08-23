@@ -4,8 +4,12 @@
     ItemBean i = (ItemBean) request.getAttribute("item");
 %>
 <html>
-<head><title>Edit Book</title></head>
+<head>
+<link rel="stylesheet" href="css/styless.css">
+<title>Edit Book</title>
+</head>
 <body>
+<div class="container">
 <h2>Edit Book</h2>
 <form action="editItem" method="post">
     <input type="hidden" name="itemId" value="<%=i.getItemId()%>">
@@ -14,5 +18,6 @@
     Stock: <input type="number" name="stock" value="<%=i.getStock()%>" required><br>
     <input type="submit" value="Update Book">
 </form>
+</div>
 </body>
 </html>

@@ -10,8 +10,11 @@
 %>
 
 <html>
-<head><title>My Profile</title></head>
+<head>
+<link rel="stylesheet" href="css/styless.css">
+<title>My Profile</title></head>
 <body>
+<div class="container">
 <h1>My Profile</h1>
 
 <% if (request.getAttribute("errorMessage") != null) { %>
@@ -43,6 +46,10 @@
 
   <input type="submit" value="Update">
 </form>
+
+
 <% } %>
+</div>
+<p> <a href="customerDashboard.jsp">Back to Dashboard</a></p>
 </body>
 </html>

@@ -1,0 +1,131 @@
+@charset "UTF-8";
+/* General Reset */
+body {
+    font-family: Arial, sans-serif;
+    background:#e9d3c0;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #000000;
+}
+a:hover {
+    text-decoration: underline;
+    color: #1d6fa5;
+}
+
+/* Center container */
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th {
+    background: #2c3e50;
+    color: white;
+    padding: 12px;
+    text-align: center;
+}
+
+table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+/* Form styling */
+form {
+    margin: 15px 0;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="number"],
+form select {
+    width: 90%;
+    padding: 8px;
+    margin: 6px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form input[type="submit"] {
+    background: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form input[type="submit"]:hover {
+    background: #1d6fa5;
+}
+
+/* Messages */
+p {
+    text-align: center;
+}
+p[style*="color:red"] {
+    background: #f8d7da;
+    color: #842029;
+    padding: 10px;
+    border-radius: 5px;
+}
+p[style*="color:green"] {
+    background: #d1e7dd;
+    color: #0f5132;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Buttons/Links */
+.btn {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.btn-primary {
+    background: #3498db;
+    color: white;
+}
+
+.btn-danger {
+    background: #e74c3c;
+    color: white;
+}
+
+.btn-warning {
+    background: #f39c12;
+    color: white;
+}
